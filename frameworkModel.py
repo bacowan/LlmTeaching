@@ -32,7 +32,7 @@ class FrameworkModel():
             return self.__chat("Can you please rephrase?")
     
     def __validate_prompt(self, prompt):
-        response = self.__chat("Does this specifically answer your question? "\
+        response = self.__chat("Does this answer your question Does this answer your question (even if the answer is incorrect)? "\
                                 + "\"" + prompt + "\""\
                                 + ". Please answer with a simple yes or no.")
         return "yes" in response.lower()
