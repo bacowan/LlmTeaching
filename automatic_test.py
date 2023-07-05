@@ -4,6 +4,7 @@ from config import openapi_key, model
 from frameworkModel import FrameworkModel
 import logging
 import random
+from responder import ask_further_question
 
 logging.basicConfig(filename='chat_logs.log', encoding='utf-8', level=logging.INFO)
 random.seed(0)
@@ -14,7 +15,6 @@ problemFiles = os.listdir("./problems")
 responseFiles = os.listdir("./responses")
 with open("./questions/initial_questions.txt", "r") as f:
     initialQuestions = f.readlines()
-print(initialQuestions)
 
 # Questions to ask: initial question, 5 questions in a category (categories are "on the right track",
 #   "not on the right track" and "not sure").
@@ -25,16 +25,17 @@ for problemFile in problemFiles:
     for responseFile in filter(lambda f : os.path.splitext(f)[0].startswith(os.path.splitext(problemFile)[0]), responseFiles):
         logging.info("Problem: " + problemFile + "; Response: " + responseFile)
         problem = open("./problems/" + problemFile, "r").read()
-        response = open("./responses/" + responseFile, "r").read()
-        initialQuestion = initialQuestions[random.randint(0, len(initialQuestions) - 1)]
-        print(problem)
-        print(response)
-        print(initialQuestion)
+        code = open("./responses/" + responseFile, "r").read()
+        for role in ["on the right track, but need a little nudge", "really stuck"]:
+            initialQuestion = random.choice(initialQuestions)
+            logging.info("VisibleQuestion: " + initialQuestion)
 
-        model = FrameworkModel()
-        print(model.start_conversation(problem, initialQuestion, response))
+            model = FrameworkModel()
+            response = model.start_conversation(problem, initialQuestion, code)
+            logging.info("VisibleResponse: " + response)
 
-        prompt = input()
-        while prompt != "exit":
-            print(model.send_prompt(prompt))
-            prompt = input()
+            for _ in range(5):
+                prompt = ask_further_question(model.conversation, role)
+                logging.info("VisibleQuestion: " + prompt)
+                response = model.send_prompt(prompt)
+                logging.info("VisibleResponse: " + response)
