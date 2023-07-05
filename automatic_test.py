@@ -16,7 +16,7 @@ with open("./questions/initial_questions.txt", "r") as f:
     initialQuestions = f.readlines()
 print(initialQuestions)
 
-# Questions to ask: initial question, 2 questions in a category (categories are "on the right track",
+# Questions to ask: initial question, 5 questions in a category (categories are "on the right track",
 #   "not on the right track" and "not sure").
 # If the LLM doesn't give any useful information in that time, or the information is misleading, then
 #   consider it a failure. Otherwise consider it a success.
