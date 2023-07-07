@@ -11,9 +11,9 @@ class FrameworkModel():
             + code + "\n\n"\
             + question + "\n"\
             + "I would like you to act as a teacher: "\
-            + "ask me questions about why I have implemented "\
+            + "ask me a question about why I have implemented "\
             + "the code this way in order for me to come to the conclusion myself. "\
-            + "Ask me the questions one at a time."
+            + "After that, ask me another question, and so on."
         
         return self.__chat(prompt)
     
@@ -24,20 +24,20 @@ class FrameworkModel():
             is_valid = self.__validate_prompt(prompt)
             if (is_valid):
                 fullPrompt = prompt + "\n"\
-                    + "Remember to act as a teacher: don't give me any explicit answers."
+                    + "Please keep helping me, and remember to act as a teacher: don't give me any explicit answers or code."
                 return self.__chat(fullPrompt)
             else:
                 return self.__chat("Can you please rephrase?")
     
     def __validate_prompt(self, prompt):
-        response = self.__chat("Does this answer the question you just posed (even if the answer is incorrect)? "\
+        response = self.__chat("Please categorize the following as it relates to what you just posted: "\
                                 + "\"" + prompt + "\""\
-                                + ". Please answer with a simple yes or no.")
-        return "yes" in response.lower()
+                                + ". Is it: relevant, irrelevant, or relevant but incorrect? Please give a one word response.",
+                                include_in_history=False)
+        return "relevant" in response.lower()
 
     def __chat(self, prompt, include_in_history = True):
-        if (include_in_history):
-            self.conversation.append({"role": "user", "content": prompt})
+        self.conversation.append({"role": "user", "content": prompt})
         response = openai.ChatCompletion.create(
             model=model,
             messages=self.conversation

@@ -1,0 +1,5 @@
+def pow(n, p):
+    ret = 1
+    for _ in range(p):
+        ret = ret * n
+    return ret

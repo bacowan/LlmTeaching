@@ -1,0 +1,21 @@
+Given an integer N. The task is to generate a square matrix of ( n x n ) having the elements ranging from 1 to n^2 with the following condition:
+
+The elements of the matrix should be distinct i.e used only once
+Numbers ranging from 1 to n^2
+Every sub-matrix you choose should have the sum of opposite corner elements as even i.e sum of top left and bottom right should be even and the sum of top right and bottom left element should be even
+This property should apply to all the submatrices of the matrix. You need to generate an Even Sub-Matrix
+
+Examples:
+
+Input: 2 
+Output: 1 2 
+4 3 
+Explanation: Here sum of 1+3=4 is even and 2+4=6 is even
+
+
+Input: 4 
+Output: 1 2 3 
+4 5 6 
+7 8 9 
+Explanation: The sub matrix [1 2 4 5], [2 3 5 6], [4 5 7 8], [5 6 8 9], [1 2 3 4 5 6 7 8 9] satisfies the condition of opposite corner 
+elements having even sum 

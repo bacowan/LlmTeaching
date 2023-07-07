@@ -1,0 +1,9 @@
+Given a number N and power P, the task is to find the power of a number ( i.e. NP ) using recursion.
+
+Examples: 
+
+Input: N = 2 , P = 3
+Output: 8
+
+Input: N = 5 , P = 2
+Output: 25
