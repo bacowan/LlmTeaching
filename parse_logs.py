@@ -1,7 +1,7 @@
 # extracts the conversation that the student would see from the log file
 import os
 
-log_file = "./chat_logs_list_reverse_2.log"
+log_file = "./chat_logs_tuple_cube_2.log"
 split_file = os.path.splitext(log_file)
 new_log_file = split_file[0] + "_conversation" + split_file[1]
 

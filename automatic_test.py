@@ -43,11 +43,10 @@ openai.api_key = openapi_key
 # Compare to raw LLM responses of the same questions.
 
 logging.info("Problem: " + item)
-initialQuestion = "Please help"
-logging.info("VisibleQuestion: " + initialQuestion)
+logging.info("VisibleQuestion: " + question)
 
 model = FrameworkModel()
-response = model.start_conversation(problem, initialQuestion, code)
+response = model.start_conversation(problem, question, code)
 logging.info("VisibleResponse: " + response)
 print(response)
 
@@ -57,11 +56,14 @@ for _ in range(5):
         try:
             newPrompt = ""
             while newPrompt == "":
-                prompt = ask_further_question(model.conversation, role)
-                logging.info("SuggestedQuestion: " + prompt)
-                print("Suggested prompt:")
-                print(prompt)
-                newPrompt = input("New prompt: ")
+                try:
+                    prompt = ask_further_question(model.conversation, role)
+                    logging.info("SuggestedQuestion: " + prompt)
+                    print("Suggested prompt:")
+                    print(prompt)
+                    newPrompt = input("New prompt: ")
+                except:
+                    print("oops; trying again")
             logging.info("VisibleQuestion: " + newPrompt)
             response = model.send_prompt(newPrompt)
             logging.info("VisibleResponse: " + response)

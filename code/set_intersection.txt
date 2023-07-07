@@ -11,5 +11,7 @@ def common_data(list1, list2):
             # if one common
             if x == y:
                 result = True
+            else:
+                result = False
                  
     return result

@@ -1,9 +1,8 @@
 config.py
-*.log
 *.pdf
 *.tex
 *.gz
-result_notes.txt
+./*.log
 
 # Created by https://www.toptal.com/developers/gitignore/api/python
 # Edit at https://www.toptal.com/developers/gitignore?templates=python
