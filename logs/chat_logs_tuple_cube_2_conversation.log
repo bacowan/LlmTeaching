@@ -1,0 +1,16 @@
+INFO:root:VisibleQuestion: I'm not getting the expected result
+INFO:root:VisibleResponse: Why did you use the expression 'val * 3' to calculate the second element of each tuple?
+INFO:root:VisibleQuestion: I used the expression 'val * 3' because I misunderstood the instructions and thought that the task was to find the cube of each number.
+INFO:root:VisibleResponse: Understood. Let's try to clarify the task further. What do the instructions mean by "the cube of the number"?
+INFO:root:VisibleQuestion: Cubing means raising something to the power of 3
+INFO:root:VisibleResponse: Great! Now let's examine the expression you used: 'val * 3'. Does this expression calculate the cube of a number as per the instructions?
+INFO:root:VisibleQuestion: Hmm, if that's now raising something to the power of 3, what is?
+INFO:root:VisibleResponse: You're on the right track! To calculate the cube of a number, we need to raise it to the power of 3. Can you think of an exponentiation operator or function in Python that can help us achieve this?
+INFO:root:VisibleQuestion: I am not familiar with any exponentiation operator or function in Python that can raise a number to the power of 3. I'm not sure how to accomplish that.
+INFO:root:VisibleResponse: No worries! In Python, we can use the exponentiation operator `**` to raise a number to a specific power. To raise a number to the power of 3, we would use `** 3`. 
+
+Now, can you think of a way to modify your code to calculate the cube of each number using this information?
+INFO:root:VisibleQuestion: I've never seen the ** syntax before. Are you sure it's correct?
+INFO:root:VisibleResponse: Apologies for any confusion caused. The `**` syntax is indeed correct for exponentiation in Python. It represents raising a number to a specific power. In this case, `** 3` represents raising a number to the power of 3, which is what we need to calculate the cube.
+
+I encourage you to give it a try and modify your code accordingly. Let me know if you have any further questions!

@@ -1,0 +1,20 @@
+INFO:root:VisibleQuestion: I'm not getting the expected result
+INFO:root:VisibleResponse: Why did you choose to multiply each element by 3 in the list comprehension?
+
+INFO:root:VisibleQuestion: I multiplied each element by 3 in the list comprehension because I thought that was the correct way to calculate the cube of the number.
+INFO:root:VisibleResponse: Great! It's good that you're attempting to find the cube of the number. However, multiplying the element by 3 will only give the cube if the number itself is 3. 
+
+Now, let's think about how we can calculate the cube of a number. What mathematical operation can we use to get the cube of a number?
+INFO:root:VisibleQuestion: We can calculate the cube of a number by multiplying the number by itself twice.
+INFO:root:VisibleResponse: Exactly! To calculate the cube of a number, we can multiply the number by itself twice. 
+
+Now, based on this understanding, how can we modify the code to calculate the cube of each number in the list?
+INFO:root:VisibleQuestion: would val * val work?
+INFO:root:VisibleResponse: Yes, you're on the right track! Multiplying `val` by `val` would indeed give you the square of the number. To calculate the cube of a number, we would need to multiply it by itself twice. 
+
+So, based on this, how can we modify the code to calculate the cube of each number in the list?
+INFO:root:VisibleQuestion: Oh, you mean I need to do val * val * val
+INFO:root:VisibleResponse: Exactly! We need to multiply `val` by itself twice to calculate the cube of a number. So to modify the code correctly, we should do `val * val * val`.
+Can you now make the necessary modification in the code to calculate the cube of each number in the list?
+INFO:root:VisibleQuestion: is there another function I could use to get the cube?
+INFO:root:VisibleResponse: Yes, there is another function you can use to get the cube of a number. Can you think of any mathematical function that could help?
