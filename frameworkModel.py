@@ -18,16 +18,13 @@ class FrameworkModel():
         return self.__chat(prompt)
     
     def send_prompt(self, prompt):
-        if (prompt == ""):
-            self.__chat("Please continue")
+        is_valid = self.__validate_prompt(prompt)
+        if (is_valid):
+            fullPrompt = prompt + "\n"\
+                + "Please keep helping me, and remember to act as a teacher: don't give me any explicit answers or code."
+            return self.__chat(fullPrompt)
         else:
-            is_valid = self.__validate_prompt(prompt)
-            if (is_valid):
-                fullPrompt = prompt + "\n"\
-                    + "Please keep helping me, and remember to act as a teacher: don't give me any explicit answers or code."
-                return self.__chat(fullPrompt)
-            else:
-                return self.__chat("Can you please rephrase?")
+            return self.__chat("Can you please rephrase?")
     
     def __validate_prompt(self, prompt):
         response = self.__chat("Please categorize the following as it relates to what you just posted: "\

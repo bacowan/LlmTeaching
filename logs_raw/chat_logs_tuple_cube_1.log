@@ -1,0 +1,62 @@
+INFO:root:Problem: tuple_cube
+INFO:root:VisibleQuestion: I'm not getting the expected result
+INFO:root:Prompt: I have been given the following instructions:
+Given a list of numbers of list, write a Python program to create a list of tuples having first element as the number and second element as the cube of the number.
+
+Example:
+
+Input: list = [1, 2, 3]
+Output: [(1, 1), (2, 8), (3, 27)]
+
+Input: list = [9, 5, 6]
+Output: [(9, 729), (5, 125), (6, 216)]
+
+I have written the following code:
+list1 = [1, 2, 5, 6]
+ 
+# using list comprehension to iterate each
+# values in list and create a tuple as specified
+res = [(val, val * 3) for val in list1]
+ 
+# print the result
+print(res)
+
+I'm not getting the expected result
+INFO:root:Response: Your code is close, but you are cubing the number incorrectly. Instead of multiplying the number by 3, you should be raising it to the power of 3 using the exponentiation operator `**`. Here's the corrected code:
+
+```python
+list1 = [1, 2, 5, 6]
+
+# using list comprehension to iterate each
+# value in list and create a tuple with the number and its cube
+res = [(val, val**3) for val in list1]
+
+# print the result
+print(res)
+```
+
+Output:
+```
+[(1, 1), (2, 8), (5, 125), (6, 216)]
+```
+
+Now the code correctly creates a list of tuples, where the first element is the number from the input list, and the second element is the cube of that number.
+INFO:root:VisibleResponse: Your code is close, but you are cubing the number incorrectly. Instead of multiplying the number by 3, you should be raising it to the power of 3 using the exponentiation operator `**`. Here's the corrected code:
+
+```python
+list1 = [1, 2, 5, 6]
+
+# using list comprehension to iterate each
+# value in list and create a tuple with the number and its cube
+res = [(val, val**3) for val in list1]
+
+# print the result
+print(res)
+```
+
+Output:
+```
+[(1, 1), (2, 8), (5, 125), (6, 216)]
+```
+
+Now the code correctly creates a list of tuples, where the first element is the number from the input list, and the second element is the cube of that number.

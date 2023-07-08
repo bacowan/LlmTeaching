@@ -1,0 +1,77 @@
+INFO:root:Problem: dictionary_sum
+INFO:root:VisibleQuestion: Please help
+INFO:root:Prompt: I have been given the following instructions:
+Given a dictionary in Python, write a Python program to find the sum of all items in the dictionary.
+
+Examples: 
+
+Input : {â€˜aâ€™: 100, â€˜bâ€™:200, â€˜câ€™:300}
+Output : 600
+
+Input : {â€˜xâ€™: 25, â€˜yâ€™:18, â€˜zâ€™:45}
+Output : 88
+
+I have written the following code:
+def returnSum(myDict):
+ 
+    list = []
+    for i in myDict:
+        list.append(i)
+    final = sum(list)
+ 
+    return final
+
+Please help
+INFO:root:Response: Your code is almost there, but you are appending the keys (i.e., 'a', 'b', 'c') to your list instead of the values (i.e., 100, 200, 300). 
+
+To fix this, you can modify your code as follows:
+
+```python
+def returnSum(myDict):
+    list = []
+    for i in myDict:
+        list.append(myDict[i])
+    final = sum(list)
+    return final
+```
+
+This code should correctly calculate the sum of all items in the dictionary by iterating over the dictionary and appending the values to the list.
+INFO:root:VisibleResponse: Your code is almost there, but you are appending the keys (i.e., 'a', 'b', 'c') to your list instead of the values (i.e., 100, 200, 300). 
+
+To fix this, you can modify your code as follows:
+
+```python
+def returnSum(myDict):
+    list = []
+    for i in myDict:
+        list.append(myDict[i])
+    final = sum(list)
+    return final
+```
+
+This code should correctly calculate the sum of all items in the dictionary by iterating over the dictionary and appending the values to the list.
+INFO:root:GetQuestion: Give me a sample response, but pretend you're a student who's on the right track, but need a little nudge. Do so by completing the statement: "My answer to your question is as follows:"
+INFO:root:ResponseQuestion: My answer to your question is as follows: I believe I am on the right track with my code. I have created an empty list to store the values from the dictionary. However, I mistakenly appended the keys instead of the values. I just need a little nudge to modify my code like this:
+
+```python
+def returnSum(myDict):
+    my_list = []
+    for key in myDict:
+        my_list.append(myDict[key])
+    final_sum = sum(my_list)
+    return final_sum
+```
+
+By iterating over the dictionary and appending the values to my list, I can then use the `sum()` function to calculate the sum of all items.
+INFO:root:SuggestedQuestion: My answer to your question is as follows: I believe I am on the right track with my code. I have created an empty list to store the values from the dictionary. However, I mistakenly appended the keys instead of the values. I just need a little nudge to modify my code like this:
+
+```python
+def returnSum(myDict):
+    my_list = []
+    for key in myDict:
+        my_list.append(myDict[key])
+    final_sum = sum(my_list)
+    return final_sum
+```
+
+By iterating over the dictionary and appending the values to my list, I can then use the `sum()` function to calculate the sum of all items.

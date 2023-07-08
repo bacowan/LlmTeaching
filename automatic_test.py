@@ -2,6 +2,7 @@ import openai
 import os
 from config import openapi_key, model
 from frameworkModel import FrameworkModel
+from rawModel import RawModel
 import logging
 import random
 from responder import ask_further_question
@@ -33,19 +34,10 @@ print("Question: " + question)
   
 openai.api_key = openapi_key
 
-# Questions to ask: initial question, 5 questions in a category (categories are "on the right track",
-#   "not on the right track" and "not sure").
-# Questions are from here: https://www.geeksforgeeks.org/python-exercises-practice-questions-and-solutions/
-# Get the LLM to suggest questions, and use those if they're reasonable use them. Otherwise get the LLM to
-#   suggest a different question instead.
-# If the LLM doesn't give any useful information in that time, or the information is misleading, then
-#   consider it a failure. Otherwise consider it a success.
-# Compare to raw LLM responses of the same questions.
-
 logging.info("Problem: " + item)
 logging.info("VisibleQuestion: " + question)
 
-model = FrameworkModel()
+model = RawModel()
 response = model.start_conversation(problem, question, code)
 logging.info("VisibleResponse: " + response)
 print(response)
