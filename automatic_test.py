@@ -22,8 +22,8 @@ elif student_type == "2":
     logname = 'chat_logs_' + item + '_2.log'
     role = "really stuck"
 else:
-    print("invalid role")
-    exit()
+    logname = 'chat_logs_' + item + '_3.log'
+    role = None
 
 logging.basicConfig(filename=logname, encoding='utf-8', level=logging.INFO)
 
@@ -37,7 +37,7 @@ openai.api_key = openapi_key
 logging.info("Problem: " + item)
 logging.info("VisibleQuestion: " + question)
 
-model = RawModel()
+model = FrameworkModel()
 response = model.start_conversation(problem, question, code)
 logging.info("VisibleResponse: " + response)
 print(response)

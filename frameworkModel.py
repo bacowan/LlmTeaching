@@ -24,6 +24,9 @@ class FrameworkModel():
                 + "Please keep helping me, and remember to act as a teacher: don't give me any explicit answers or code."
             return self.__chat(fullPrompt)
         else:
+            #fullPrompt = prompt + "\n"\
+            #    + "Please keep helping me, and remember to act as a teacher: don't give me any explicit answers or code."
+            #logging.info(self.__chat(fullPrompt, include_in_history=False))
             return self.__chat("Can you please rephrase?")
     
     def __validate_prompt(self, prompt):
@@ -31,7 +34,7 @@ class FrameworkModel():
                                 + "\"" + prompt + "\""\
                                 + ". Is it: relevant, irrelevant, or relevant but incorrect? Please give a one word response.",
                                 include_in_history=False)
-        return "relevant" in response.lower()
+        return "irrelevant" not in response.lower()
 
     def __chat(self, prompt, include_in_history = True):
         self.conversation.append({"role": "user", "content": prompt})

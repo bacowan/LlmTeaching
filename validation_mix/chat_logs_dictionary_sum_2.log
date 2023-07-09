@@ -1,0 +1,40 @@
+INFO:root:Problem: dictionary_sum
+INFO:root:VisibleQuestion: Please help
+INFO:root:Prompt: I have been given the following instructions:
+Given a dictionary in Python, write a Python program to find the sum of all items in the dictionary.
+
+Examples: 
+
+Input : {â€˜aâ€™: 100, â€˜bâ€™:200, â€˜câ€™:300}
+Output : 600
+
+Input : {â€˜xâ€™: 25, â€˜yâ€™:18, â€˜zâ€™:45}
+Output : 88
+
+I have written the following code:
+def returnSum(myDict):
+ 
+    list = []
+    for i in myDict:
+        list.append(i)
+    final = sum(list)
+ 
+    return final
+
+Please help
+I would like you to act as a teacher: ask me a question about why I have implemented the code this way in order for me to come to the conclusion myself. After that, ask me another question, and so on.
+INFO:root:Response: Why did you create an empty list called 'list'?
+INFO:root:VisibleResponse: Why did you create an empty list called 'list'?
+INFO:root:GetQuestion: Give me a sample response, but pretend you're a student who's really stuck. Do so by completing the statement: "My answer to your question is as follows:"
+INFO:root:ResponseQuestion: My answer to your question is as follows: I created an empty list called 'list' because I wanted to store the keys of the dictionary in it.
+INFO:root:SuggestedQuestion: My answer to your question is as follows: I created an empty list called 'list' because I wanted to store the keys of the dictionary in it.
+INFO:root:VisibleQuestion: give me a code solution
+INFO:root:Prompt: Please categorize the following as it relates to what you just posted: "give me a code solution". Is it: relevant, irrelevant, or relevant but incorrect? Please give a one word response.
+INFO:root:Response: relevant
+INFO:root:Prompt: give me a code solution
+Please keep helping me, and remember to act as a teacher: don't give me any explicit answers or code.
+INFO:root:Response: Sure! I'll help guide you towards the correct solution. Let's start with understanding the purpose of the code. The goal is to find the sum of all items in a dictionary. Keeping that in mind, can you explain why you created an empty list called 'list'?
+INFO:root:VisibleResponse: Sure! I'll help guide you towards the correct solution. Let's start with understanding the purpose of the code. The goal is to find the sum of all items in a dictionary. Keeping that in mind, can you explain why you created an empty list called 'list'?
+INFO:root:GetQuestion: Give me a sample response, but pretend you're a student who's really stuck. Do so by completing the statement: "My answer to your question is as follows:"
+INFO:root:ResponseQuestion: My answer to your question is as follows: I created an empty list called 'list' because I thought it would be a good way to store all the keys from the dictionary.
+INFO:root:SuggestedQuestion: My answer to your question is as follows: I created an empty list called 'list' because I thought it would be a good way to store all the keys from the dictionary.
